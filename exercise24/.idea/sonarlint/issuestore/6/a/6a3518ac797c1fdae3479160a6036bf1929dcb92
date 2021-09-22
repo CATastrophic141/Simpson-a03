@@ -1,0 +1,31 @@
+
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ò€¨
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆè‘Êøÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ä’••ûÿÿÿÿ
+—
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÏ¿Ğ
+F
+java:S1172"0Remove this unused method parameter "stringNum".(Ò€¨
+H
+java:S1172"-Remove this unused method parameter "string".(ˆè‘Êøÿÿÿÿ
+A
+java:S1172"&Remove these unused method parameters.(Ä’••ûÿÿÿÿ
+F
+java:S1172&"0Remove this unused method parameter "isAnagram".(öÏ¿Ğ
+]
+java:S1854-";Remove this useless assignment to local variable "anagram".(‡Ìâ­ùÿÿÿÿ8öšÛÀ/
+N
+java:S1481-",Remove this unused "anagram" local variable.(‡Ìâ­ùÿÿÿÿ8öšÛÀ/
+H
+java:S1128	"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+N
+java:S1144"8Remove this unused private "promptAnagramString" method.(Ò€¨
+Q
+java:S1144"6Remove this unused private "anagramStringPrep" method.(ˆè‘Êøÿÿÿÿ
+N
+java:S1144"3Remove this unused private "anagramCompare" method.(Ä’••ûÿÿÿÿ
+H
+java:S1144&"2Remove this unused private "anagramResult" method.(öÏ¿Ğ
