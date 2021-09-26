@@ -41,4 +41,11 @@ class PasswordTest {
         int expected = 6;
         assertEquals (expected, passTest.passwordValidator(password));
     }
+    @Test
+    void resultStringGenerateTest(){
+        Password passTest = new Password();
+        int score = 5;
+        String expected = "strong";
+        assertEquals (expected, passTest.resultStringGenerate(score));
+    }
 }
