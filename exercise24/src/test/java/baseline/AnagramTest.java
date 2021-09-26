@@ -24,7 +24,7 @@ class AnagramTest {
         Anagram anagram = new Anagram();
         String string1 = "REGAL";
         String string2 = "LARGE";
-        boolean test = anagram.anagramCompare(string1, string2);
+        boolean test = anagram.isAnagram(string1, string2);
         assertTrue(test);
     }
     @Test
@@ -32,7 +32,7 @@ class AnagramTest {
         Anagram anagram = new Anagram();
         String string1 = "POSITIVE";
         String string2 = "NEGATIVE";
-        boolean test = anagram.anagramCompare(string1, string2);
+        boolean test = anagram.isAnagram(string1, string2);
         assertFalse(test);
     }
 }

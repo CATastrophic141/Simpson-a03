@@ -29,7 +29,7 @@ class Anagram{
         return Arrays.toString(charArray);
     }
 
-    boolean anagramCompare(String string1, String string2){
+    boolean isAnagram(String string1, String string2){
         //Save sorted version of string1
         String sortedString1 = prepAnagramString(string1);
         //Save sorted version of string2
@@ -38,10 +38,6 @@ class Anagram{
         return sortedString1.equals(sortedString2);
     }
 
-    /*If isAnagram is true
-    *       Print that the strings are anagrams
-    * Else
-    *       Print that the strings are not anagrams*/
     void anagramResult(boolean isAnagram){
         //If strings are anagrams print positive confirmation
         if(isAnagram){
@@ -64,7 +60,7 @@ public class Solution24 {
         //Save second string in variable with call too prompt method
         String string2 = anagram.promptAnagramString(2);
         //Save true or false result to a boolean variable with call to comparison method
-        boolean result = anagram.anagramCompare(string1, string2);
+        boolean result = anagram.isAnagram(string1, string2);
         //Call result printing method
         anagram.anagramResult(result);
     }
