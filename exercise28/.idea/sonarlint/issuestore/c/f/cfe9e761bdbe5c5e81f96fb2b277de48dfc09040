@@ -1,0 +1,15 @@
+
+T
+java:S1854"9Remove this useless assignment to local variable "input".(Úî¿òøÿÿÿÿ
+E
+java:S1481"*Remove this unused "input" local variable.(Úî¿òøÿÿÿÿ
+D
+java:S1172"/Remove this unused method parameter "numArray".(ŸàÅo
+V
+java:S1854-";Remove this useless assignment to local variable "numbers".(”ÅÙ×üÿÿÿÿ
+M
+java:S1854+"7Remove this useless assignment to local variable "sum".(¾èµ£
+>
+java:S1481+"(Remove this unused "sum" local variable.(¾èµ£
+G
+java:S1481-",Remove this unused "numbers" local variable.(”ÅÙ×üÿÿÿÿ
