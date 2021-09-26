@@ -22,7 +22,7 @@ class EmployeeEntry {
         return errorMessages;
     }
 
-    private String validateFirstName(String firstName){
+    String validateFirstName(String firstName){
         //If string is less than two characters in length
         if (firstName.length()<2) {
                 //If string is empty
@@ -30,14 +30,14 @@ class EmployeeEntry {
                     //Return "First name must be filled in \n"
                     return "First name must be filled in\nFirst name must be at least 2 characters\n";
                 }
-            //Return "First name must be more than 2 characters\n"
-            return "First name must be more than 2 characters\n";
+            //Return "First name must be at least 2 characters\n"
+            return "First name must be at least 2 characters\n";
         }
         //Else return "" (empty string)
         return "";
     }
 
-    private String validateLastName(String lastName){
+    String validateLastName(String lastName){
         //If string is less than two characters in length
         if (lastName.length()<2) {
             //If string is empty
@@ -45,14 +45,14 @@ class EmployeeEntry {
                 //Return "Last name must be filled in\n"
                 return "Last name must be filled in\nLast name must be at least 2 characters\n";
             }
-            //Return "Last name must be more than 2 characters\n"
+            //Return "Last name must be at least 2 characters\n"
             return "Last name must be at least 2 characters\n";
         }
         //Else return "" (empty string)
         return "";
     }
 
-    private String validateZipCode(String zip) {
+    String validateZipCode(String zip) {
         //For the length of the string
         for (int i = 0; i < zip.length(); i++) {
             //Check if each character is a number (Equal to number in ASCII)
@@ -66,7 +66,7 @@ class EmployeeEntry {
         return "";
     }
 
-    private String validateEmployeeCode(String code){
+    String validateEmployeeCode(String code){
     //For the length of the string
         String resultChar;
         String resultLength;

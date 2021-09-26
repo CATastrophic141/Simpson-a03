@@ -5,47 +5,55 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PasswordTest {
+    static String testPassword = "P@ssw0rd";
+    Password passTest = new Password();
+    @Test
+    void passwordValidatorTests() {
+        String passwordNumbers = "12345";
+        int expectedNumbers = 1;
+        assertEquals (expectedNumbers, passTest.passwordValidator(passwordNumbers));
+        String passwordLetters = "abcdef";
+        int expectedLetters = 2;
+        assertEquals (expectedLetters, passTest.passwordValidator(passwordLetters));
+        String passwordBoth = "abc123";
+        int expectedBoth = 3;
+        assertEquals (expectedBoth, passTest.passwordValidator(passwordBoth));
+        String passwordBothLong = "abcde12345";
+        int expectedBothLong = 4;
+        assertEquals (expectedBothLong, passTest.passwordValidator(passwordBothLong));
+        String passwordFull = "L3gend@ry";
+        int expectedFull = 6;
+        assertEquals (expectedFull, passTest.passwordValidator(passwordFull));
+    }
 
     @Test
-    void passwordValidatorTestVery() {
-        Password passTest = new Password();
-        String password = "12345";
-        int expected = 1;
-        assertEquals (expected, passTest.passwordValidator(password));
-    }
-    @Test
-    void passwordValidatorTestWeak() {
-        Password passTest = new Password();
-        String password = "abcdef";
-        int expected = 2;
-        assertEquals (expected, passTest.passwordValidator(password));
-    }
-    @Test
-    void passwordValidatorTestModerate() {
-        Password passTest = new Password();
-        String password = "abc123";
-        int expected = 3;
-        assertEquals (expected, passTest.passwordValidator(password));
-    }
-    @Test
-    void passwordValidatorTestStrong() {
-        Password passTest = new Password();
-        String password = "abcde12345";
-        int expected = 4;
-        assertEquals (expected, passTest.passwordValidator(password));
-    }
-    @Test
-    void passwordValidatorTestVeryStrong() {
-        Password passTest = new Password();
-        String password = "L3gend@ry";
-        int expected = 6;
-        assertEquals (expected, passTest.passwordValidator(password));
-    }
-    @Test
     void resultStringGenerateTest(){
-        Password passTest = new Password();
         int score = 5;
         String expected = "strong";
         assertEquals (expected, passTest.resultStringGenerate(score));
+    }
+
+    @Test
+    void numberCheckTest(){
+        int expected = 1;
+        assertEquals(expected, passTest.numberCheck(testPassword));
+    }
+
+    @Test
+    void letterCheckTest(){
+        int expected = 2;
+        assertEquals(expected, passTest.letterCheck(testPassword));
+    }
+
+    @Test
+    void symbolCheckTest(){
+        int expected = 2;
+        assertEquals(expected, passTest.symbolCheck(testPassword));
+    }
+
+    @Test
+    void lengthCheckTest(){
+        int expected = 1;
+        assertEquals(expected, passTest.lengthCheck(testPassword));
     }
 }
