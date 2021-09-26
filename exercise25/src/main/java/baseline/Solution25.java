@@ -91,7 +91,7 @@ public class Solution25 {
         Scanner input = new Scanner(System.in);
         Password passCheck = new Password();
         //Prompt user for password
-
+        System.out.printf("%n");
         //Save password into string
         String password = input.nextLine();
         //Call password validator and save value to passwordScore variable
@@ -99,13 +99,22 @@ public class Solution25 {
         //Enter switch statement
         switch (passwordScore) {
             //If score = 0, print password strength is unknown
-            case 0:
-                //If score = 1, print password strength is very weak
-            case 1:
-                //If score = 2, print password strength is weak
-                //If score = 3, print password strength is moderate
-                //If score = 4, print password is strong
-                //If score = 5 or greater, print password is very strong
+            case 0 -> System.out.printf("%n");
+
+            //If score = 1, print password strength is very weak
+            case 1 -> System.out.printf("%n");
+
+            //If score = 2, print password strength is weak
+            case 2 -> System.out.printf("%n");
+
+            //If score = 3, print password strength is moderate
+            case 3 -> System.out.printf("%n");
+
+            //If score = 4, print password is strong
+            case 4 -> System.out.printf("%n");
+
+            //If score = 5 or greater (Default), print password is very strong
+            default -> System.out.printf("%n");
         }
     }
 }
