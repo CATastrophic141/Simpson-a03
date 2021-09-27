@@ -9,7 +9,7 @@ import java.util.Scanner;
 import static java.lang.Character.isUpperCase;
 
 class EmployeeEntry {
-    public String validateInput(String firstName, String lastName, String zip, String code){
+    String validateInput(String firstName, String lastName, String zip, String code){
         //Call on validation functions for first name, last name, zip code, and employee code
         //Concatenate all validation function results
         String errorMessages = validateFirstName(firstName) + validateLastName(lastName) + validateZipCode(zip) + validateEmployeeCode(code);
