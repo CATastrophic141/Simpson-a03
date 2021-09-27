@@ -3,71 +3,72 @@
  *  Copyright 2021 Rylan Simpson
  */
 
-/*The rule of 72 is a quick method for estimating how long it will take to double your investment,
- by taking the number 72 and dividing it by the expected rate of return.
-  It’s a good tool that helps you figure out if the stock, bond, or savings account is right for you.
-   It’s also a good program to write to test for and prevent bad input because computers can’t divide by zero.
-    And instead of exiting the program when the user enters invalid input,
-     you can just keep prompting for inputs until you get one that’s valid.
-
-        Write a quick calculator that prompts for the rate of return on an investment and calculates how many years it will take to double your investment.
-
-        The formula is
-
-        years = 72 / r
-        where r is the stated rate of return.*/
-
-/*The following format can be used to validate input:while (true) {
-            if (input.hasNextInt()) {
-                return input.nextInt();
-            } else {
-                input.next();
-            }
-            System.out.println(ERROR_MSG);
-        }
-         */
-
 package baseline;
 
 import java.util.Scanner;
 
 class Investment {
 
-    double inputValidator(){
+    private static boolean isNumeric(String string) {
+        //If the string is empty return false
+        if (string == null) {
+            return false;
+        }
+        //If attempting to parse the string results in an error return false
+        try {
+            Double.parseDouble(string);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        //If parsing is successful return true
+        return true;
+    }
+
+    double inputValidator(String userIn){
         Scanner input = new Scanner(System.in);
-        //Prompt user for rate of return
-        System.out.printf("%n");
-        //Save user input to string
-        String userIn;
-        //If user input is not a number or is equal to or less than
-        if () {
-            //while the user input value is invalid
-            while () {
-                //Print error statement
-                System.out.printf("%n");
-                //Prompt user for rate of return
-                System.out.printf("%n");
-                //Get user input
-                userIn;
+        //while the user input value is not a number or is less than or equal to 0
+        while (true) {
+            //If the user input is not a number
+            if (!isNumeric(userIn)){
+                //Print error message
+                System.out.printf("Please enter a number input%nEnter the rate of the return%n");
+                //Take next user input
+                userIn = input.nextLine();
             }
-         else {
-            //Return user input (Ensure it has been parsed into a double)
-            return;
+            //If the user input is less than or equal to zero
+            else if(Double.parseDouble(userIn) <= 0) {
+                //Print error message
+                System.out.printf("Please enter a number greater than 0%nEnter the rate of the return%n");
+                //Take next user input
+                userIn = input.nextLine();
+            }
+            else if (Double.parseDouble(userIn) > 0){
+                //Return user input (Ensure it has been parsed into a double)
+                return Double.parseDouble(userIn);
+            }
         }
     }
 
     double findYearsUntilDouble(double rate){
         //Return 72 divided by the rate
-        return;
+        return Math.ceil((72.0/rate)*100)/100;
     }
 
 }
 
 public class Solution29 {
     public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        Investment invest = new Investment();
+        //Initial prompt for rate of return
+        System.out.printf("Enter the rate of the return%n");
+        //Save user input to string for testing
+        String userIn = input.nextLine();
         //Call input validation method and save value
+        double rate = invest.inputValidator(userIn);
         //Call years until double method and save value
+        double years = invest.findYearsUntilDouble(rate);
         //Print out how many years it will take until the investment is doubled
-        System.out.printf("%n");
+        System.out.printf("It will take %.2f years for your investment to double%n", years);
     }
 }
