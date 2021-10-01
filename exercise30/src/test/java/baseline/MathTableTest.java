@@ -11,7 +11,7 @@ class MathTableTest {
     @Test
     void printMultTable() {
         String expected = createExpectedTable();
-        String actual = table.generateMultTableString();
+        String actual = table.generateMultTableString(12, 12);
         assertEquals(expected, actual);
     }
 
