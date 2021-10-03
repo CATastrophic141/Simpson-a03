@@ -20,69 +20,66 @@ class Person {
     //Create constructors
     Person(String first, String job, String separation){
         //Initialize values using arguments
-
+        firstName = first;
+        position = job;
+        separationDate = separation;
     }
 
     Person(String first, String job){
         //Initialize values based on arguments
-
+        firstName = first;
+        position = job;
+        separationDate = "";
     }
 }
 
 class Records {
-
-    String searchInput;
 
     //Create a list to store versions of hashmaps
     ArrayList<TreeMap<String, Person>> mapList = new ArrayList<>();
     //Create a hashmap to store the data of a given person, using their last name as a key
     TreeMap<String, Person> emp = new TreeMap<>();
 
-    void initializeListMapExampleFourty() {
+    void initializeListMapExampleForty() {
         //Initialize each entry of the hashmap for each person
-        Person p1 = new Person();
-        Person p2 = new Person();
-        Person p3 = new Person();
-        Person p4 = new Person();
-        Person p5 = new Person();
-        Person p6 = new Person();
-        //Add each person into the hashmap
-        emp.put();
-        emp.put();
-        emp.put();
-        emp.put(;
-        emp.put();
-        emp.put();
+        Person p1 = new Person("John", "Manager", "2016-12-31");
+        Person p2 = new Person("Tou", "Software Engineer", "2016-10-05");
+        Person p3 = new Person("Michaela", "District Manager", "2015-12-19");
+        Person p4 = new Person("Jake", "Programmer");
+        Person p5 = new Person("Jacquelyn", "DBA");
+        Person p6 = new Person("Sally", "Web Developer", "2015-12-18");
+        //Add each person into the tree map
+        emp.put("Johnson", p1);
+        emp.put("Xiong", p2);
+        emp.put("Michaelson", p3);
+        emp.put("Jacobson", p4);
+        emp.put("Jackson", p5);
+        emp.put("Webber", p6);
         //Add map to list
         mapList.add(emp);
     }
 
-    void setSearchInput(String keyword) {
-        //Set the search input variable to the passed string
-        searchInput;
-    }
-
     void printDataWithKeyword(ArrayList<TreeMap<String, Person>> mapList, String keyword) {
         //For each mapList item
-        //Set map list to access its stored map
-        for () {
+             //Set map list to access its stored map
+        for (TreeMap<String, Person> tMap : mapList) {
             //Print head of table
-            System.out.printf("%n");
-            System.out.printf("%n");
+            System.out.printf("Name\t\t\t\t | Position \t\t\t| Separation Date%n");
+            System.out.printf("---------------------|----------------------|-----------------------%n");
             //For each entry in the tree map
                     //Tree maps should automatically sort based on key
-            for () {
+            for (Map.Entry<String, Person> entry : tMap.entrySet()) {
                 //Get each value
-                String last;
-                Person temp;
-                String first;
-                String job;
-                String separation;
-                String fullName;
+                String last = entry.getKey();
+                Person temp = entry.getValue();
+                String first = temp.firstName;
+                String job = temp.position;
+                String separation = temp.separationDate;
+                String fullName = first + " " + last;
                 //If the first name or last name contains the keyword
-                if() {
+                if(first.contains(keyword) || last.contains(keyword)) {
                     //Print out the entry, set in tabular format
-                    System.out.printf("%n");
+                    System.out.printf("%20s | %20s | %s %n", fullName, job, separation);
                 }
             }
         }
@@ -95,12 +92,12 @@ public class Solution40 {
         Records employees = new Records();
         Scanner input = new Scanner(System.in);
         //Prompt user for the keyword they would like to search for
-        System.out.printf("%n");
+        System.out.printf("Please enter the keyword to search for in the employee names:%n");
         //Save user input into string
-        String key;
+        String key = input.nextLine();
         //Call record initialization method
-        employees.initializeListMapExampleFourty();
+        employees.initializeListMapExampleForty();
         //Call filtered record printing method
-        employees.printDataWithKeyword();
+        employees.printDataWithKeyword(employees.mapList, key);
     }
 }

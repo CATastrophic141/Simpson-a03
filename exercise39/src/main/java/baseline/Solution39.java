@@ -49,7 +49,7 @@ class Records {
         Person p4 = new Person("Jake", "Programmer");
         Person p5 = new Person("Jacquelyn", "DBA");
         Person p6 = new Person("Sally", "Web Developer", "2015-12-18");
-        //Add each person into the hashmap
+        //Add each person into the treemap
                 //The last name will be used as the key as tree maps automatically sort by key
         emp.put("Johnson", p1);
         emp.put("Xiong", p2);

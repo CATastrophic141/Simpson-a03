@@ -13,7 +13,7 @@ class RecordsTest {
     Records test = new Records();
 
     @BeforeEach
-    void initializeListMapExampleThirtyNine() {
+    void initializeListMapExampleForty() {
         //Initialize each entry of the hashmap for each person
         Person p1 = new Person("John", "Manager", "2016-12-31");
         Person p2 = new Person("Tou", "Software Engineer", "2016-10-05");
@@ -33,58 +33,61 @@ class RecordsTest {
     }
 
     @Test
-    void accessLastNameKeyTest() {
-        //This method tests the printing method's functional abilities to retrieve the key from the sorted tree map
-        String actual = "";
+    void checkIfLastNameContainsTestTrue() {
+        //This method tests the printing method's functional abilities to check if a name and details should be printed
+        String str = "";
         for (TreeMap<String, Person> tMap : test.mapList) {
             for (Map.Entry<String, Person> entry : tMap.entrySet()) {
-                actual = entry.getKey();
+                str = entry.getKey();
             }
         }
-        //actual string should be final retrieved key
-        assertEquals("Xiong", actual);
+        //If the string is successfully accessed and the keyword is found the condition should return true
+        boolean condition = str.contains("Xio");
+        assertTrue(condition);
     }
 
     @Test
-    void accessFirstNameTest() {
-        //This method tests the printing method's functional abilities to get the first name from the sorted tree map
-        String actual = "";
+    void checkIfLastNameContainsTestFalse() {
+        //This method tests the printing method's functional abilities to check if a name and details should be printed
+        String str = "";
         for (TreeMap<String, Person> tMap : test.mapList) {
             for (Map.Entry<String, Person> entry : tMap.entrySet()) {
-                Person temp = entry.getValue();
-                actual = temp.firstName;
+                str = entry.getKey();
             }
         }
-        //actual string should be final retrieved first name
-        assertEquals("Tou", actual);
+        //If the string is successfully accessed and the keyword is not found the condition should return false
+        boolean condition = str.contains("Jam");
+        assertFalse(condition);
     }
 
     @Test
-    void accessPositionTest() {
-        //This method tests the printing method's functional abilities to get the position from the sorted tree map
-        String actual = "";
+    void checkIfFirstNameContainsTestTrue() {
+        //This method tests the printing method's functional abilities to check if a name and details should be printed
+        String str = "";
         for (TreeMap<String, Person> tMap : test.mapList) {
             for (Map.Entry<String, Person> entry : tMap.entrySet()) {
                 Person temp = entry.getValue();
-                actual = temp.position;
+                str = temp.firstName;
             }
         }
-        //actual string should be final retrieved position
-        assertEquals("Software Engineer", actual);
+        //If the string is successfully accessed and the keyword is found the condition should return true
+        boolean condition = str.contains("T");
+        assertTrue(condition);
     }
+
 
     @Test
-    void accessSeparationDateTest() {
-        //This method tests the printing method's functional abilities to get the Separation date from the sorted tree map
-        String actual = "";
+    void checkIfFirstNameContainsTestFalse() {
+        //This method tests the printing method's functional abilities to check if a name and details should be printed
+        String str = "";
         for (TreeMap<String, Person> tMap : test.mapList) {
             for (Map.Entry<String, Person> entry : tMap.entrySet()) {
                 Person temp = entry.getValue();
-                actual = temp.separationDate;
+                str = temp.firstName;
             }
         }
-        //actual string should be final retrieved separation date
-        assertEquals("2016-10-05", actual);
+        //If the string is successfully accessed and the keyword is not found the condition should return false
+        boolean condition = str.contains("R");
+        assertFalse(condition);
     }
-
 }
