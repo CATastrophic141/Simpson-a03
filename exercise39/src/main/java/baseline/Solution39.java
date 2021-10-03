@@ -5,6 +5,7 @@
 
 package baseline;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -33,6 +34,8 @@ class Person {
 
 class Records {
 
+    //Create a list to store versions of hashmaps
+    ArrayList<TreeMap<String, Person>> mapList = new ArrayList<>();
     //Create a hashmap to store the data of a given person, using their last name as a key
     TreeMap<String, Person> emp = new TreeMap<>();
 
@@ -51,24 +54,29 @@ class Records {
         emp.put("Jacobson", p4);
         emp.put("Jackson", p5);
         emp.put("Webber", p6);
+        mapList.add(emp);
     }
 
-    void printData() {
-        //Print head of table
-        System.out.printf("Name\t\t\t\t | Position \t\t\t| Separation Date%n");
-        System.out.printf("---------------------|----------------------|-----------------------%n");
-        //For each entry in the tree map
-                //Tree maps should automatically sort based on key
-        for (Map.Entry<String,Person> entry : emp.entrySet()){
-            //Get each value
-            String last = entry.getKey();
-            Person temp = entry.getValue();
-            String first = temp.firstName;
-            String job = temp.position;
-            String separation = temp.separationDate;
-            String fullName = first + " " + last;
-            //Print out each entry, set in tabular format
-            System.out.printf("%20s | %20s | %.10s %n", fullName, job, separation);
+    void printData(ArrayList<TreeMap<String, Person>> mapList) {
+        //For each mapList item
+                //Set map list to access its stored map
+        for (TreeMap<String, Person> tMap : mapList) {
+            //Print head of table
+            System.out.printf("Name\t\t\t\t | Position \t\t\t| Separation Date%n");
+            System.out.printf("---------------------|----------------------|-----------------------%n");
+            //For each entry in the tree map
+            //Tree maps should automatically sort based on key
+            for (Map.Entry<String, Person> entry : tMap.entrySet()) {
+                //Get each value
+                String last = entry.getKey();
+                Person temp = entry.getValue();
+                String first = temp.firstName;
+                String job = temp.position;
+                String separation = temp.separationDate;
+                String fullName = first + " " + last;
+                //Print out each entry, set in tabular format
+                System.out.printf("%20s | %20s | %s %n", fullName, job, separation);
+            }
         }
     }
 
@@ -80,6 +88,6 @@ public class Solution39 {
         //Call record initialization method
         employees.initializeMapExampleThirtyNine();
         //Call record printing method
-        employees.printData();
+        employees.printData(employees.mapList);
     }
 }
