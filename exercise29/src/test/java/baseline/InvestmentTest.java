@@ -18,7 +18,7 @@ class InvestmentTest {
     void findYearsUntilDoubleTestIsNaNTest() {
         String userIn = "12.5";
         double expected = 12.5;
-        double actual = invest.inputValidator(userIn);
+        double actual = invest.validateInput(userIn);
         assertEquals(expected, actual);
     }
 

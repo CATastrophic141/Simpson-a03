@@ -36,24 +36,24 @@ class PasswordTest {
     @Test
     void numberCheckTest(){
         int expected = 1;
-        assertEquals(expected, passTest.numberCheck(testPassword));
+        assertEquals(expected, passTest.checkNumbers(testPassword));
     }
 
     @Test
     void letterCheckTest(){
         int expected = 2;
-        assertEquals(expected, passTest.letterCheck(testPassword));
+        assertEquals(expected, passTest.checkLetters(testPassword));
     }
 
     @Test
     void symbolCheckTest(){
         int expected = 2;
-        assertEquals(expected, passTest.symbolCheck(testPassword));
+        assertEquals(expected, passTest.checkSymbol(testPassword));
     }
 
     @Test
     void lengthCheckTest(){
         int expected = 1;
-        assertEquals(expected, passTest.lengthCheck(testPassword));
+        assertEquals(expected, passTest.checkLength(testPassword));
     }
 }

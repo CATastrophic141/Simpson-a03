@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 class Password{
     //Validate if the password string contains a number character
-    int numberCheck(String password){
+    int checkNumbers(String password){
         int stringLength = password.length();
         int numScore = 0;
         int tracer = 0;
@@ -30,7 +30,7 @@ class Password{
         return numScore;
     }
     //Validate if the password string contains a letter character
-    int letterCheck(String password){
+    int checkLetters(String password){
         int stringLength = password.length();
         int letterScore = 0;
         int tracer = 0;
@@ -51,7 +51,7 @@ class Password{
         return letterScore;
     }
 
-    int symbolCheck(String password){
+    int checkSymbol(String password){
         int stringLength = password.length();
         int symbolScore = 0;
         int tracer = 0;
@@ -72,7 +72,7 @@ class Password{
         return symbolScore;
     }
 
-    int lengthCheck(String password){
+    int checkLength(String password){
         int lengthScore = 0;
         //If password string is greater than 8 characters update lengthScore to 1
         if (password.length() >= 8){
@@ -84,7 +84,7 @@ class Password{
 
     int passwordValidator(String password){
         //Return lengthCheck, numberCheck, letterCheck, and symbolCheck added together
-        return lengthCheck(password) + numberCheck(password) + letterCheck(password) + symbolCheck(password);
+        return checkLength(password) + checkNumbers(password) + checkLetters(password) + checkSymbol(password);
     }
 
     String resultStringGenerate(int score){

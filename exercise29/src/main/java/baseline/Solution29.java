@@ -24,7 +24,7 @@ class Investment {
         return true;
     }
 
-    double inputValidator(String userIn){
+    double validateInput(String userIn){
         Scanner input = new Scanner(System.in);
         //while the user input value is not a number or is less than or equal to 0
         while (true) {
@@ -65,7 +65,7 @@ public class Solution29 {
         //Save user input to string for testing
         String userIn = input.nextLine();
         //Call input validation method and save value
-        double rate = invest.inputValidator(userIn);
+        double rate = invest.validateInput(userIn);
         //Call years until double method and save value
         double years = invest.findYearsUntilDouble(rate);
         //Print out how many years it will take until the investment is doubled
