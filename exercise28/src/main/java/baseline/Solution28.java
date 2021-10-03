@@ -3,9 +3,7 @@
  *  Copyright 2021 Rylan Simpson
  */
 
-/*In previous programs, you asked the user for repeated input by writing the input statements multiple times.
-But it’s more efficient to use loops to deal with repeated input.
-Write a program that prompts the user for five numbers and computes the total of the numbers.*/
+package baseline;
 
 import java.util.Scanner;
 

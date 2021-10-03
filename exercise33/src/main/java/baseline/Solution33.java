@@ -3,13 +3,14 @@
  *  Copyright 2021 Rylan Simpson
  */
 
-
 package baseline;
 
 import java.util.Random;
 import java.util.Scanner;
 
 class EightBall {
+
+    Random rand = new Random();
 
     //Create string array of possible responses
     String[] responses = {"Yes", "No", "Maybe", "Ask again later"};
@@ -23,7 +24,6 @@ class EightBall {
     }
 
     int generateRandNum() {
-        Random rand = new Random();
         //Return random number between 0 and 4000
             //Use 4000 and upper bound and then add 1 to get a rand num between 1 and 4000
         return rand.nextInt(4000)+1;
