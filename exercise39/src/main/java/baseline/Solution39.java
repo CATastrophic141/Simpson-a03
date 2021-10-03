@@ -16,57 +16,59 @@ class Person {
     String separationDate;
 
     //Create constructors
-    void Person(String first, String job, String separation){
+    Person(String first, String job, String separation){
         //Initialize values using arguments
+        firstName = first;
+        position = job;
+        separationDate = separation;
     }
 
-    void Person(String first, String job){
+    Person(String first, String job){
         //Initialize values based on arguments
+        firstName = first;
+        position = job;
+        separationDate = "";
     }
 }
 
 class Records {
 
     //Create a hashmap to store the data of a given person, using their last name as a key
-    TreeMap<String, Person> emp = new TreeMap<String, Person>();
+    TreeMap<String, Person> emp = new TreeMap<>();
 
-    void initializeMapExample39() {
+    void initializeMapExampleThirtyNine() {
         //Initialize each entry of the hashmap for each person
-        Person p1 = new Person();
-        p1.Person();
-        Person p2 = new Person();
-        p2.Person();
-        Person p3 = new Person();
-        p3.Person();
-        Person p4 = new Person();
-        p4.Person();
-        Person p5 = new Person();
-        p5.Person();
-        Person p6 = new Person();
-        p6.Person();
+        Person p1 = new Person("John", "Manager", "2016-12-31");
+        Person p2 = new Person("Tou", "Software Engineer", "2016-10-05");
+        Person p3 = new Person("Michaela", "District Manager", "2015-12-19");
+        Person p4 = new Person("Jake", "Programmer");
+        Person p5 = new Person("Jacquelyn", "DBA");
+        Person p6 = new Person("Sally", "Web Developer", "2015-12-18");
         //Add each person into the hashmap
-        emp.put();
-        emp.put();
-        emp.put();
-        emp.put();
-        emp.put();
-        emp.put();
+        emp.put("Johnson", p1);
+        emp.put("Xiong", p2);
+        emp.put("Michaelson", p3);
+        emp.put("Jacobson", p4);
+        emp.put("Jackson", p5);
+        emp.put("Webber", p6);
     }
 
-    void printData(TreeMap<String, Person>) {
+    void printData() {
         //Print head of table
-        System.out.printf("%n");
+        System.out.printf("Name\t\t\t\t | Position \t\t\t| Separation Date%n");
+        System.out.printf("---------------------|----------------------|-----------------------%n");
         //For each entry in the tree map
                 //Tree maps should automatically sort based on key
         for (Map.Entry<String,Person> entry : emp.entrySet()){
             //Get each value
             String last = entry.getKey();
             Person temp = entry.getValue();
-            String first;
-            String job;
-            String separation;
+            String first = temp.firstName;
+            String job = temp.position;
+            String separation = temp.separationDate;
+            String fullName = first + " " + last;
             //Print out each entry, set in tabular format
-            System.out.printf("%n");
+            System.out.printf("%20s | %20s | %.10s %n", fullName, job, separation);
         }
     }
 
@@ -76,6 +78,8 @@ public class Solution39 {
     public static void main(String[] args) {
         Records employees = new Records();
         //Call record initialization method
+        employees.initializeMapExampleThirtyNine();
         //Call record printing method
+        employees.printData();
     }
 }
